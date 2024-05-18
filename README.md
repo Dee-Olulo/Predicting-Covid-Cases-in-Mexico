@@ -13,6 +13,9 @@ The primary Objectives are:
 2. Develop a predictive machine learning model to identify factors that may contribute to an increase in positive Covid-19 cases. 
 
 3. Provide insights and recommendation
+   
+**Stakeholder:**
+The Ministry of Health
 
 ## Data Understanding
 
