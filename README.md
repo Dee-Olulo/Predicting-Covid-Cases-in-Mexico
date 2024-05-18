@@ -78,9 +78,19 @@ Most of the people that were not pregnant and tested positive died
 
 ## Modelling
 
-### Logistic Regression Modelling
+## Creating a baseline model to serve as a point of reference using Logistic regression
 
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/0a6f0d58-418b-4e35-9f3b-6e53d8e7b638)
+In healthcare decisions related to COVID-19, where timely identification and containment of cases are crucial for public health, prioritizing recall might be more important. Ensuring that true positive cases are not missed helps in early detection, isolation, and treatment, ultimately limiting the spread of the virus and mitigating its impact on public health.
+
+**True Positives (TP):** The number of observations where the model predicted the test result as positive, and the individual does have COVID-19.
+
+**True Negatives (TN):** The number of observations where the model predicted the test result as negative, and the individual is indeed free of COVID-19.
+
+**False Positives (FP):** The number of observations where the model predicted the test result as positive, but the individual does not have COVID-19.
+
+**False Negatives (FN):** The number of observations where the model predicted the test result as negative, but the individual does have COVID-19.
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/4ee78be3-0e54-4a8a-a170-a152dfbbba70)
 
 **Observations**
 
@@ -107,60 +117,45 @@ The confusion matrix provides information on the model's performance in classify
 
 Based on the confusion matrix, it is evident that the model struggles with correctly identifying instances that are actually positive results, as indicated by the relatively high number of false negatives (653). This observation aligns with the low recall score (34%) obtained in the evaluation results.
 
-**AdaBoost Classifier**
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/a41a9dfb-33ae-4aab-9f80-b64c8f471d91)
+#### Logisitic regression with Adaboostclassifier 
 
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/f8a76758-a91c-4c4a-82e9-942698add90c)
 
+#### Observations 
+**Accuracy:**
 
 The model's accuracy is 62%, indicating the percentage of correctly predicted instances. While this is slightly above random guessing for a balanced dataset, it should be considered alongside other metrics to understand its real-world performance.
 
-Overall Precision (68%): This was incorrectly stated in the provided criteria. Correct precision is 59% for class 1 and 63% for class 0. Precision of 59% for positive cases means that more than half of the predicted positive instances are true positives. Recall:
+**Overall Precision (68%):**
+This was incorrectly stated in the provided criteria. Correct precision is 59% for class 1 and 63% for class 0.
+Precision of 59% for positive cases means that more than half of the predicted positive instances are true positives.
+Recall:
 
-Overall Recall (34%): This was also incorrectly stated. Correct recall is 49% for class 1 and 72% for class 0. Recall of 49% for positive cases indicates that the model is missing half of the actual positive cases, which is concerning for early detection and containment. F1 Score:
+**Overall Recall (34%):**
+This was also incorrectly stated. Correct recall is 49% for class 1 and 72% for class 0.
+Recall of 49% for positive cases indicates that the model is missing half of the actual positive cases, which is concerning for early detection and containment.
+F1 Score:
 
-Overall F1 Score (0.453731): This was incorrectly stated. Correct F1 score is 0.54 for class 1 and 0.67 for class 0. An F1 score of 0.54 for positive cases represents a moderate balance between precision and recall but indicates room for improvement in both metrics. 
+**Overall F1 Score (54%):**
+This was incorrectly stated. Correct F1 score is 0.54 for class 1 and 0.67 for class 0.
+An F1 score of 0.54 for positive cases represents a moderate balance between precision and recall but indicates room for improvement in both metrics.
+Confusion Matrix:
 
-## Decision Trees
+**True Negatives (TN):** 861 instances where the model predicted the test result as negative, and the individual is indeed free of COVID-19.
+**False Positives (FP):** 334 instances where the model predicted the test result as positive, but the individual does not have COVID-19
 
-**Decision Trees with Bagging Performance:**
+**False Negatives (FN):** 500 instances  where the model predicted the test result as negative, but the individual does have COVID-19
 
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/3689829a-1f14-42d0-b32b-5ee2ed5599e0)
+**True Positives (TP):** 482 instances where the model predicted the test result as positive, and the individual does have COVID-19.
 
-Decision Trees with Bagging Performance:
+**Critical Observations:**
 
-Accuracy: The model's accuracy is 63%, meaning that 63% of the total predictions (both positive and negative) are correct. Precision:
+The high number of false negatives (500) is problematic, as it indicates many positive cases are not being detected, which can lead to further spread of COVID-19.
+The confusion matrix aligns with the low recall score (49%) for positive cases, reflecting the model's difficulty in identifying actual positive cases.
 
-precision for class 1 (positive cases) is 65%, implying that more than half of the predicted positive instances are actually true positives. However, there are still a significant number of false positives, indicated by the relatively high number of false positives (346 instances).
+#### GridSearch CV 
 
-Recall: The recall for class 1 (positive cases) is 40%, indicating that the model misses 60% of the actual positive cases. This is concerning for early detection and containment of COVID-19, as a high recall is crucial for identifying as many positive cases as possible.
-
-F1 Score: The F1 score for class 1 (positive cases) is 50%, representing a moderate balance between precision and recall. However, there is room for improvement, particularly in recall.
-
-#### Random Forest with Bagging and Subspace Sampling:
-
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/5b59865c-b3a8-4c08-b61f-72d1a911df06)
-
-**Accuracy:**
-
-The model's accuracy is 56%, meaning that 56% of the total predictions (both positive and negative) are correct.This is quite low. This indicates that the model is making a significant number of incorrect predictions
-
-###  ROC Curves
-
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/097bf19e-fe9a-482d-875f-63078a9f803b)
-
-### Feature Importance
-
-![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/b9832d32-075b-4c39-b371-44244bbd64ce)
-
-## Best Model Evaluation
-
-**Logistic Regression with GridSearchCV**  appears to be the best performer among the models in predicting the highest percentage 
-of positive cases.This means that individuals who actually have the virus are more likely to be identified correctly. This would be the best Model for the Ministry of Health to ensure:
-
-Accurate case predictions support the planning and distribution of healthcare resources like hospital beds, ventilators, and medical staff.
-Identification of  high-risk groups and optimizing vaccine distribution.
-
-**Model Evaluation**
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/a62e7d5a-7bd4-4ba6-ace3-81077f2d56a3)
 
 **Accuracy:**
 
@@ -172,43 +167,143 @@ The model's accuracy is 62%, meaning that 62% of the total predictions (both pos
 
 **F1 Score:** The F1 score, at 54%, represents a moderate balance between precision and recall.
 
-**Detailed Confusion Matrix**
-
-**Evaluation True Negatives (TN):** 849 instances where the model correctly predicted negative cases.
+**Detailed Confusion Matrix Evaluation**
+True Negatives (TN): 849 instances where the model correctly predicted negative cases.
 
 **False Positives (FP):** 346 instances where the model incorrectly predicted positive cases (individuals do not have COVID-19 but were predicted as positive).
 
 **False Negatives (FN):** 491 instances where the model incorrectly predicted negative cases (individuals have COVID-19 but were predicted as negative).
 
 **True Positives (TP):** 491 instances where the model predicted the test result as positive, and the individual does have COVID-19
-n.
+
+## Decision Trees
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/fb113bc7-17ac-4774-977e-d2a731361f40)
+
+### **Decision Trees with Bagging Performance:**
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/a405772b-339f-45dd-8659-42267764e994)
+
+**Obseravtions**
+
+**Accuracy:**
+The model's accuracy is 63%, meaning that 63% of the total predictions (both positive and negative) are correct.
+Precision:
+
+**precision** for class 1 (positive cases) is 65%, implying that more than half of the predicted positive instances are actually true positives. However, there are still a significant number of false positives, indicated by the relatively high number of false positives (346 instances).
+
+**Recall:**
+The recall for class 1 (positive cases) is 40%, indicating that the model misses 60% of the actual positive cases. This is concerning for early detection and containment of COVID-19, as a high recall is crucial for identifying as many positive cases as possible.
+
+**F1 Score:**
+The F1 score for class 1 (positive cases) is 50%, representing a moderate balance between precision and recall. However, there is room for improvement, particularly in recall.
+
+**Confusion Matrix Evaluation**
+**True Negatives (TN):** 978 instances where the model correctly predicted negative cases.
+
+**False Positives (FP):** 217 instances where the model incorrectly predicted positive cases (individuals do not have COVID-19 but were predicted as positive).
+
+**False Negatives (FN):** 585 instances where the model incorrectly predicted negative cases (individuals have COVID-19 but were predicted as negative).
+
+**True Positives (TP):** 397 instances where the model correctly predicted positive cases.
+
+**Critical Observations**
+High Number of False Negatives (FN): 585 false negatives indicate that the model misses a significant portion of actual positive cases. This poses a risk as it leads to undetected COVID-19 cases, potentially contributing to further spread.
+
+### Random Forest with subspace sampling (Random Subspaces)
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/edc2537b-c4b8-4fe1-99ea-9f42dbafe95c)
+
+
+**Observations**
+
+**True Negatives (TN):** 861 instances where the model correctly predicted negative cases.
+
+**False Positives (FP):** 334 instances where the model incorrectly predicted positive cases (individuals do not have COVID-19 but were predicted as positive).
+
+**False Negatives (FN):** 500 instances where the model incorrectly predicted negative cases (individuals have COVID-19 but were predicted as negative).
+
+**True Positives (TP):** 482 instances where the model correctly predicted positive cases.
+
+**Critical Observations**
+**High Number of False Negatives (FN):** 500 false negatives indicate that the model misses a significant portion of actual positive cases. This poses a risk as it leads to undetected COVID-19 cases, potentially contributing to further spread.
+Low Recall for Positive Cases: The low recall for positive cases (47%) indicates that the model struggles to identify actual positive cases, which is concerning for early detection and containment of COVID-19.
+
+### Random Forest with Bagging and Subspace Sampling:
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/3db55964-6ba2-4f1b-b871-eee5eb5ba7af)
+
+**Accuracy:**
+
+The model's accuracy is 56%, meaning that 56% of the total predictions (both positive and negative) are correct.This is quite low. This indicates that the model is making a significant number of incorrect predictions
+
+**Precision:** The precision is 52%, implying 52% of the predicted positive instances are actually true positives, but there is still a significant number of false positives.
+
+**Recall:** The recall for class 1 indicates that the model misses 50% of the actual positive cases.
+
+**F1 Score:** The F1 score, at 52%, represents a moderate balance between precision and recall.
+
+**Detailed Confusion Matrix Evaluation**
+True Negatives (TN): 725 instances where the model correctly predicted negative cases.
+
+False Positives (FP): 470 instances where the model incorrectly predicted positive cases (individuals do not have COVID-19 but were predicted as positive).
+
+False Negatives (FN): 478 instances where the model incorrectly predicted negative cases (individuals have COVID-19 but were predicted as negative).
+
+True Positives (TP): 504 instances where the model predicted the test result as positive, and the individual does have COVID-19
+
+** ROC AUC values of Logistic Regression, Decision Trees**
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/a39a1cdb-cccc-4905-a567-455b884d6149)
+
+### Best Model : Logistic Regression with GridSearchCV 
+Logistic Regression with GridSearchCV  appears to be the best performer among the models in predicting the highest percentage 
+of positive cases with a recall of 50%.It also has on of the best ROC of 61% This means that individuals who actually have the virus are more likely to be identified correctly. This would be the best Model for the Ministry of Health to ensure:
+
+Accurate case predictions support the planning and distribution of healthcare resources like hospital beds, ventilators, and medical staff.
+Identification of  high-risk groups and optimizing vaccine distribution.
+
+### Feature Importance
+The Best perofroming Model was Logistic Regression with GridSearchCV . Below is a rank of the features of importance:
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/b53daa0e-ac80-44cf-8cc3-157562b330ca)
 
 **The Most important features for predicting Covid19 positive results are:**
 
-patient_type_Inpatient
 
 age
 
-date_symptoms
+patient_type_Inpatient
 
-died 
+patient_type_Outpatient
+
+date_symptoms
 
 pneumonia_yes
 
-## Conclusion and Recomendations
-**Age:** Prioritize vaccination for older adults, as age is a significant predictor of severe COVID-19 outcomes.
+pneumonia_no
 
-**Date Symptoms First Appeared:** Implement aggressive testing and contact tracing strategies for individuals who report early onset of symptoms to quickly identify and isolate positive cases.
- 
-**Patient Type (Inpatient):** Prioritize allocation of hospital beds and ventilators to facilities handling a higher proportion of inpatients, as these patients are more likely to have severe cases.
+died 
+
+
+
+## Conclusion and Recomendations
+ Prioritize vaccination for older adults, as age is a significant predictor of severe COVID-19 outcomes.
+
+ Prioritize allocation of hospital beds and ventilators to facilities handling a higher proportion of inpatients, as these patients are more likely to have severe cases.
+
 
 Ensure that hospitals with a high number of inpatients are adequately staffed with specialized healthcare professionals.
 
-**Moratlity**: Conduct thorough reviews of mortality cases to identify factors leading to severe outcomes and improve treatment protocols.
+Respiratory Support: Provide adequate respiratory support, including supplemental oxygen and ventilators, for patients with pneumonia.
 
-**pneumonia_yes:** Respiratory Support: Provide adequate respiratory support, including supplemental oxygen and ventilators, for patients with pneumonia.
+ Implement aggressive testing and contact tracing strategies for individuals who report early onset of symptoms to quickly identify and isolate positive cases.
+ 
+ Conduct thorough reviews of mortality cases to identify factors leading to severe outcomes and improve treatment protocols.
 
-
+ 
 ### Limitations
-
 The dataset used in the case study was constrained by limited information. Key factors like vaccination status, geographic location, behavioral aspects such as mask-wearing, symptom severity, and genetic history could significantly enhance accuracy and predictive capabilities.
+
+
+
