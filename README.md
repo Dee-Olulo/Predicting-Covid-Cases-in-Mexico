@@ -54,6 +54,14 @@ The graph shows the highest number of negative covid results of aproximately 500
 
 The 5th month (May) had the highest number of positive covid results and the cases dropped significantly during the month of July.
 
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/b446c13d-74b2-471c-8754-b8a1b3ef923a)
+
+More females tested negative while more males tested positive.In both categories:
+- The majority of the test results are Negative (represented by the blue bars).
+- The second most common result is Positive (represented by the orange bars).
+- The least common result is Awaiting Results (represented by the green bars).
+
+
 ![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/74c23f0e-0697-43ba-8257-ff0f93da34c2)
 
 May had the highest number of covid Test results while July had the least number of covid test results
@@ -61,6 +69,12 @@ May had the highest number of covid Test results while July had the least number
 ![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/b32d0218-2023-4331-9d2e-f9e0ca756b70)
 
 Most of the people that had tested positive survived while those that died were few approximately 400.
+
+## Multivariate analysis
+
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/21fb04cd-2a52-4110-a313-2962c0d96e06)
+
+Most of the people that were not pregnant and tested positive died
 
 ## Modelling
 
@@ -94,8 +108,8 @@ The confusion matrix provides information on the model's performance in classify
 Based on the confusion matrix, it is evident that the model struggles with correctly identifying instances that are actually positive results, as indicated by the relatively high number of false negatives (653). This observation aligns with the low recall score (34%) obtained in the evaluation results.
 
 **AdaBoost Classifier**
+![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/a41a9dfb-33ae-4aab-9f80-b64c8f471d91)
 
-\![image](https://github.com/Dee-Olulo/Predicting-Covid-Cases-in-Mexico/assets/151445934/f25f3860-a3d1-49c6-9f14-d3fb117ae953)
 
 
 The model's accuracy is 62%, indicating the percentage of correctly predicted instances. While this is slightly above random guessing for a balanced dataset, it should be considered alongside other metrics to understand its real-world performance.
