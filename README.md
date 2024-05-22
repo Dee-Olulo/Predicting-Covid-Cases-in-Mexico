@@ -23,6 +23,54 @@ The primary source of COVID-19 data is Mexico’s Ministry of Health .Their data
 
 The dataset contains 10,000 entries (rows) and 23 columns.This dataset contains information about COVID-19 patients, including demographic information, medical statuc, symptoms, test results, and outcomes
 
+The column names and their descriptions are as follows:
+
+**id**:	Case identifier number
+
+**sex**:	Identifies the sex of the patient.
+
+**patient_type**:	Identifies the type of care received by the patient in the unit. It is called an outpatient if you returned home or it is called an inpatient if you were admitted to hospital.
+
+**entry_date**:	Identifies the date of the patient's admission to the care unit.
+
+**date_symptoms**:	Identifies the date on which the patient's symptoms began.
+
+**date_died**:	Identifies the date the patient died. (Missing data means patient did not die)
+
+**intubed**:	Identifies if the patient required intubation.
+
+**pneumonia**:	Identifies if the patient was diagnosed with pneumonia.
+
+**age**: Identifies the age of the patient.
+
+**pregnancy**: Identifies if the patient is pregnant.
+
+**diabetes**: Identifies if the patient has a diagnosis of diabetes.
+
+**copd**: Identifies if the patient has a diagnosis of COPD.
+
+**asthma**:	Identifies if the patient has a diagnosis of asthma.
+
+**inmsupr**: Identifies if the patient has immunosuppression.
+
+**hypertension**: Identifies if the patient has a diagnosis of hypertension.
+
+**other_disease**:	Identifies if the patient has a diagnosis of other diseases.
+
+**cardiovascular**:	Identifies if the patient has a diagnosis of cardiovascular disease.
+
+**obesity**: Identifies if the patient is diagnosed with obesity.
+
+**renal_chronic**:	Identifies if the patient has a diagnosis of chronic kidney failure.
+
+**tobacco**: Identify if the patient has a smoking habit.
+
+**contact_other_covid**: Identify if the patient had contact with any other case diagnosed with SARS CoV-2
+
+**covid_res**: Identifies the result of the analysis of the sample reported by the laboratory
+
+**icu**: Identifies if the patient required to enter an Intensive Care Unit.
+
 ## Methods
 
 The project will follow the following steps:
