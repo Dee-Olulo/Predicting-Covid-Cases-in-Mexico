@@ -32,7 +32,7 @@ a. Exploratory Data Analysis: We will perform an in-depth exploration of the dat
 b. Data Preprocessing: This step involves handling missing values, encoding categorical variables, and scaling numerical features.
 
 
-c. Model Selection and Training: Compare various classification algorithms, such as logistic regression, decision trees, and random forests, to select the most suitable model for predicting customer churn. 
+c. Model Selection and Training: Compare various classification algorithms, such as logistic regression, decision trees, and random forests, to select the most suitable model for predicting covid cases.
 
 d. Model Evaluation: We will assess the performance of the trained model using appropriate evaluation metrics, including accuracy, precision, recall, and F1-score. 
 
