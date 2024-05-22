@@ -31,15 +31,14 @@ a. Exploratory Data Analysis: We will perform an in-depth exploration of the dat
 
 b. Data Preprocessing: This step involves handling missing values, encoding categorical variables, and scaling numerical features.
 
-c. Feature Selection: We will identify relevant features that have a significant impact on customer churn prediction. 
 
-d. Model Selection and Training: We will compare various classification algorithms, such as logistic regression, decision trees, and random forests, to select the most suitable model for predicting customer churn. 
+c. Model Selection and Training: Compare various classification algorithms, such as logistic regression, decision trees, and random forests, to select the most suitable model for predicting customer churn. 
 
-e. Model Evaluation: We will assess the performance of the trained model using appropriate evaluation metrics, including accuracy, precision, recall, and F1-score. 
+d. Model Evaluation: We will assess the performance of the trained model using appropriate evaluation metrics, including accuracy, precision, recall, and F1-score. 
 
-f. Model Optimization: We will fine-tune the selected model by adjusting hyperparameters and employing techniques like grid search. This optimization process aims to maximize the model's predictive capabilities. The models used include Logistic Regression, Decision Trees and Random Forests. 
+e. Model Optimization: We will fine-tune the selected model by adjusting hyperparameters and employing techniques like grid search. This optimization process aims to maximize the model's predictive capabilities. The models used include Logistic Regression, Decision Trees and Random Forests. 
 
-In each model the performance metrics; accuracy, precision, recall and f1 score were calculated. Confusion matrix for each model was also plotted. The best model is then evaluated from the models. For LOgicticRegression with GridsearchCV only, feature importance to see which features played a role in customer churn is provided.
+In each model the performance metrics; accuracy, precision, recall and f1 score were calculated. Confusion matrix for each model was also plotted. The best model is then evaluated from the models. For LOgicticRegression with GridsearchCV only, feature importance to see which features played a role in predicting covid cases
 
 ## Exploratory Data Analysis
 
