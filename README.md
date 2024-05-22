@@ -291,18 +291,18 @@ died
 
 
 ## Conclusion and Recomendations
- Prioritize vaccination for older adults, as age is a significant predictor of severe COVID-19 outcomes.
+* Prioritize vaccination for older adults, as age is a significant predictor of severe COVID-19 outcomes.
 
- Prioritize allocation of hospital beds and ventilators to facilities handling a higher proportion of inpatients, as these patients are more likely to have severe cases.
+* Prioritize allocation of hospital beds and ventilators to facilities handling a higher proportion of inpatients, as these patients are more likely to have severe cases.
 
 
-Ensure that hospitals with a high number of inpatients are adequately staffed with specialized healthcare professionals.
+* Ensure that hospitals with a high number of inpatients are adequately staffed with specialized healthcare professionals.
 
-Respiratory Support: Provide adequate respiratory support, including supplemental oxygen and ventilators, for patients with pneumonia.
+* Respiratory Support: Provide adequate respiratory support, including supplemental oxygen and ventilators, for patients with pneumonia.
 
- Implement aggressive testing and contact tracing strategies for individuals who report early onset of symptoms to quickly identify and isolate positive cases.
+* Implement aggressive testing and contact tracing strategies for individuals who report early onset of symptoms to quickly identify and isolate positive cases.
  
- Conduct thorough reviews of mortality cases to identify factors leading to severe outcomes and improve treatment protocols.
+* Conduct thorough reviews of mortality cases to identify factors leading to severe outcomes and improve treatment protocols.
 
  
 ### Limitations
